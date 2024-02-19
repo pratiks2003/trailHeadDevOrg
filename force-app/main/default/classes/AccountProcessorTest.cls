@@ -39,7 +39,7 @@ public class AccountProcessorTest {
         Test.startTest();
         
         AccountProcessor.countContacts(accid);
-        
+        AccountProcessor.insertUser ();
         
         Test.stopTest();
         
