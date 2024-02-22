@@ -15,14 +15,14 @@ public class MixDml {
         update acc ; 
         
     }
-   @future
+ //  @future
     public static void insertUser ( ){
         
             Profile p = [SELECT Id FROM Profile WHERE Name='Standard User'];
       		UserRole r = [SELECT Id FROM UserRole WHERE Name='COO'];
        		User fu = new User(firstname = 'Sanju', lastname = 'Seni',
             alias = 'SSen', defaultgroupnotificationfrequency = 'N',
-            digestfrequency = 'N', email = 'test@test1.org',
+            digestfrequency = 'N', email = 'test@test41.org',
             emailencodingkey = 'UTF-8', languagelocalekey='en_US', 
             localesidkey='en_IN', profileid = p.Id, 
             timezonesidkey = 'Asia/Kolkata',
