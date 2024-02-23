@@ -1,6 +1,6 @@
-public with sharing class AnimalLocator {
+global with sharing class AnimalLocator {
 
-    public static String getAnimalNameById(Integer i ) {
+    global static String getAnimalNameById(Integer i) {
 
         Http ht = new Http();
 
@@ -10,25 +10,28 @@ public with sharing class AnimalLocator {
         req.setMethod('GET');
 
         HttpResponse res = ht.send(req);
-        String returnName ;
-        if( res.getStatusCode()!=200){
-
-        system.debug(' Didnt work');
-
-        }
-        else{
+        
+       
+       
+        
 
 
         Map<String,Object> result =  (Map<String,Object>) JSON.deserializeUntyped(res.getBody());
+        system.debug('result ----- > ' +result );
+        
+        Map<String,Object> animal = (Map<String,Object>) result.get('animal') ;
+        System.debug('animal -----> '+animal);
+        
+        String Name = (String )(animal.get('name')) ;
+        System.debug('Name ------> '+Name);
+      
+        return Name;
+        
+//String.valueof
+   
 
-        String Name = (String) result.get('animal') ;
 
-        returnName = Name;
-
-        }
-
-
-        return returnName;
+      
 
     }
 }

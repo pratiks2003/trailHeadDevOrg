@@ -1,5 +1,5 @@
 @isTest
-public with sharing class AnimalLocatorTest {
+public class AnimalLocatorTest extends AnimalLocatorMock{
    
 /*
 public class  AnimalLocatorMock implements HttpCalloutMock{
@@ -20,14 +20,14 @@ public class  AnimalLocatorMock implements HttpCalloutMock{
 }   
 */
 @isTest
-static void test(){
+static void getAnimalNameByIdTest(){
 
     Test.setMock(HttpCalloutMock.class, new AnimalLocatorMock());
 
     String res = AnimalLocator.getAnimalNameById(1);
 
     System.debug(res);
-    System.assertEquals('Bear', res);
+    System.assertEquals('Bull', res);
 
 }
 /*@isTest
