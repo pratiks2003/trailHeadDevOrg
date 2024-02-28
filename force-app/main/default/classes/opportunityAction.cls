@@ -1,4 +1,6 @@
-public with sharing class opportunityAction {
+public with sharing class OpportunityAction {
+
+//-------------------------------------------------------------------------------------------------------------------
    
     Public Static void UpdateStageOnPrice(List<Opportunity> newValue){
 
@@ -8,15 +10,36 @@ public with sharing class opportunityAction {
         if(o.Amount > 100000){
 
 
-     o.StageName = 'Closed Won';
-
-    }
-
+        o.StageName = 'Closed Won';
 
         }
 
 
-
+        }
 
     }
+//------------------------------------------------Q9-------------------------------------------------------------------
+public Static void updateCloseDate(List<Opportunity> newValue){
+
+
+for( opportunity o : newValue){
+
+if( o.StageName == 'Closed Won'){
+
+o.CloseDate = o.CloseDate.addMonths(1); 
+
+}
+
+
+}
+
+
+
+}
+//-------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
 }
