@@ -23,7 +23,7 @@ For(Opportunity o : opp){
 
 
     Messaging.SendEmailResult[] results = Messaging.sendEmail(mailsToSend);
-System.debug(mailsToSend);
+    System.debug(mailsToSend);
     System.debug(results);
 
     }
