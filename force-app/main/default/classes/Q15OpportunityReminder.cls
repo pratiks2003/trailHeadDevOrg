@@ -35,4 +35,4 @@ For(Opportunity o : opp){
 
 // String SchTime =  = ' 0 0 16 * * ? ';
 
-// System.schhedule('dailyOppReminder',SchTime, new Q15OpportunityReminder());
+// System.schedule('dailyOppReminder',SchTime, new Q15OpportunityReminder());
